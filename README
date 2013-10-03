@@ -1,0 +1,26 @@
+DBPEDIA-NER
+======================
+
+Description
+-----------
+
+This code was written to invetigate the feasibility of leveraging DBpedia to 
+do named entity recognition, a task that more typically requires expensive statistical models.
+
+The DBpediaNERTestDriver class can be used to feed test sentences into the DBpediaNER class, 
+whose getAnnotationTable() method takes an input sentence and returns a 2D array of 
+[word/phrase, named entity type] pairs.
+
+Running a demo
+--------------
+A pre-compiled jar file and the needed libraries can be found in the 'dist' folder.
+
+Known limitations
+-----------------
+
+The runtime performance very much depends on the stability of the dbpedia.org SPARQL endpoint. If
+dbpedia is down or experiencing difficulties, this tool will not work or will be extremely slow.
+
+The current version looks only at noun phrases. It does not look specifically at proper nouns embedded in 
+longer phrases. Adding this feature elegantly will require some refactoring and will appear in the 
+next version.
